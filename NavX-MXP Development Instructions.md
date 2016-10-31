@@ -12,15 +12,15 @@ Unzip archive into a temp directory and run setup.exe.  This will place NavX fil
 
 1) Add a Java Build Variable for the navX-MXP Java Library.  To set the build variable, from the Eclipse menu select *Window->Preferences->Java->Build Path->Classpath Variables, *then click on the "New…" button.  Then, in the “New Variable Entry” dialog, set the name to “navx-mxp” and set the Path to <HomeDirectory>\navx-mxp\java\lib\navx_frc.jar*.*  Hit OK to save this change.
 
-![image alt text](images\image_0.png)
+![image alt text](images/image_0.png)
 
 2) Ensure that your project’s library paths include the navx-mxp variable, as well as WPI library path variables (networktables and wpilib).  If any are missing, you can add them by clicking on the "Add Variable…" button.
 
-![image alt text](images\image_1.png)
+![image alt text](images/image_1.png)
 
 3) Modify the build.properties file *in your project*, adding a final line that sets the path to the navX-MXP library:
 
-![image alt text](images\image_2.png)
+![image alt text](images/image_2.png)
 
 **Instantiating NavX in Java**
 
