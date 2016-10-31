@@ -1,14 +1,14 @@
-**NavX-MXP Development Instructions**
+#NavX-MXP Development Instructions
 
 (Ensure both Eclipse/Java IDE and wpilib are installed before proceeding)
 
-**Installing NavX files**
+###Installing NavX files
 
 Download NavX file archive from Kauai Labs.
 
 Unzip archive into a temp directory and run setup.exe.  This will place NavX files into the users home directory (e.g. c:\Users\Rob\navx-mxp).
 
-**Configuring Eclipse**
+###Configuring Eclipse
 
 1) Add a Java Build Variable for the navX-MXP Java Library.  To set the build variable, from the Eclipse menu select *Window->Preferences->Java->Build Path->Classpath Variables, *then click on the "New…" button.  Then, in the “New Variable Entry” dialog, set the name to “navx-mxp” and set the Path to <HomeDirectory>\navx-mxp\java\lib\navx_frc.jar*.*  Hit OK to save this change.
 
@@ -22,7 +22,7 @@ Unzip archive into a temp directory and run setup.exe.  This will place NavX fil
 
 ![image alt text](images/image_2.png)
 
-**Instantiating NavX in Java**
+###Instantiating NavX in Java
 
 Create an AHRS class object using the following method:
 
@@ -30,7 +30,7 @@ Create an AHRS class object using the following method:
 
 *myNavX = new AHRS(I2C.Port.kMXP); *
 
-References:
+###References:
 
 [http://www.pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/java/](http://www.pdocs.kauailabs.com/navx-mxp/software/roborio-libraries/java/)
 
