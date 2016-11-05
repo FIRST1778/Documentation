@@ -1,10 +1,9 @@
-**Roborio Control System **
+##Roborio Control System
 
-**Installation Instructions**
-
+###Installation Instructions
 **Chill Out 1778**
 
-**Download the embedded JDK from Oracle:**
+####Download the embedded JDK from Oracle:
 
 Download the following version:
 
@@ -21,14 +20,14 @@ Download the following version:
 Unzip the archive in a local temp directory on the PC.
 
 In that same temp directory, switch to the ejdk/bin folder, and create a JRE distribution using the jrecreate.bat batch file:
-
+```
 jrecreate --vm client --dest C:\temp\JRE
-
+```
 Using an FTP utility like FileZilla, connect to the Roborio using anonymous user, no password.
 
 Copy the entire C:\temp\JRE directory to /usr/local/frc on the Roborio. Make sure the JRE directory and children binaries are executable.  They should be by default, but if not, use an SSH tool like PuTTY to log in and change them via chmod commands.
 
-**Reference Documentation**
+####Reference Documentation
 
 **Documentation for the 2015 FRC Control System:**
 
@@ -60,7 +59,7 @@ Copy the entire C:\temp\JRE directory to /usr/local/frc on the Roborio. Make sur
 
 **[https://wpilib.screenstepslive.com/s/4485/m/24166/l/286926-roborio-user-accounts-and-ss**h](https://wpilib.screenstepslive.com/s/4485/m/24166/l/286926-roborio-user-accounts-and-ssh)
 
-**Steps to Configure Radio (D-Link DAP1522) - 2015 and before**
+###Steps to Configure Radio (D-Link DAP1522) - 2015 and before
 
 1. **Configure the Wifi Radio.**
 
@@ -76,7 +75,7 @@ Copy the entire C:\temp\JRE directory to /usr/local/frc on the Roborio. Make sur
 
     6. Save settings.  Test access to the wifi radio by redirecting the browser to 10.17.78.1.
 
-**Steps to Configure Radio (OpenMesh OM5P-AN) - 2016**
+###Steps to Configure Radio (OpenMesh OM5P-AN) - 2016
 
 1. **Instructions on configuration:**
 
@@ -93,14 +92,17 @@ Copy the entire C:\temp\JRE directory to /usr/local/frc on the Roborio. Make sur
     3. Set either Bridge mode (for competition) or Wireless mode (for practice)
 
 5. **SSH and log into the OpenMesh radio using a tool like PuTTY**
-
-    4. IP: 10.17.78.1  Login: root   Password: root
-
+```
+    IP: 10.17.78.1  Login: root   Password: root
+```
 6. **To enable stdout for debugging after reconfiguring, reset the subnet mask on the radio:**
-
-    5. uci set dhcp.lan.dhcp_option="1**,**255.255.255.0 28**,**10.17.78.255”uci set dhcp.wan.dhcp_option=”1**,**255.255.255.0 28**,**10.17.78.255”uci commit dhcp/etc/init.d/dnsmasq restart
-
-**Steps to Configure Roborio**
+111
+    5. uci set dhcp.lan.dhcp_option="1**,**255.255.255.0 28**,**10.17.78.255”
+uci set dhcp.wan.dhcp_option=”1**,**255.255.255.0 28**,**10.17.78.255”
+uci commit dhcp
+/etc/init.d/dnsmasq restart
+111
+###Steps to Configure Roborio
 
 1. **Connect Control System Hardware.**
 
