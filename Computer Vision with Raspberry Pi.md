@@ -1,4 +1,4 @@
-#How to set up Computer Vision Processing on the Raspberry Pi and have it Communicate Target Info back to the Roborio_**
+#How to set up Computer Vision Processing on the Raspberry Pi and have it Communicate Target Info back to the Roborio
 
 ###Install Raspbian OS (Jessie)
 
