@@ -1,6 +1,6 @@
-#How to set up Computer Vision Processing on the Raspberry Pi and have it Communicate Target Info back to the Roborio
+# How to set up Computer Vision Processing on the Raspberry Pi and have it Communicate Target Info back to the Roborio
 
-###Install Raspbian OS (Jessie)
+### Install Raspbian OS (Jessie)
 
 First, install Linux on the Raspberry Pi (Raspbian OS):
 
@@ -35,11 +35,11 @@ Note: when the RPi is up-to-date you will want to disable wlan0 for competition.
 *blacklist brcmutil*
 ```
 
-####Reference:
+#### Reference:
 
 [Disable WiFi on the Raspberry Pi 3](http://raspberrypi.stackexchange.com/questions/43720/disable-wifi-wlan0-on-pi-3)
 
-###Install OpenCV & Support Libraries
+### Install OpenCV & Support Libraries
 
 Load OpenCV support libraries on Raspbian using the bash:
 
@@ -67,11 +67,11 @@ sudo make install
 sudo ldconfig
 ```
 
-####Reference:
+#### Reference:
 
 [http://www.pyimagesearch.com/2015/10/26/how-to-install-opencv-3-on-raspbian-jessie/](http://www.pyimagesearch.com/2015/10/26/how-to-install-opencv-3-on-raspbian-jessie/)
 
-###Sending target info back via Network Tables
+### Sending target info back via Network Tables
 
 Detected target information to be sent from RPi to Roborio via Network Tables.  Network tables in Roborio are easy to set up via WPILib, a little more challenging to build and use NetworkTable functionality into the RPi side - you can build ntcore (the RPi network table package) with gradle or cmake.   Use git to clone the following repository on the RPi:
 
@@ -89,13 +89,13 @@ sudo ldconfig
 
 Then when you compile your own code, you would add the "-lntcore" flag to G++.
 
-####Roborio Network Table references: 
+#### Roborio Network Table references: 
 [http://wpilib.screenstepslive.com/s/3120/m/7912/l/80205-writing-a-simple-networktables-program-in-c-and-java-with-a-java-client-pc-side](http://wpilib.screenstepslive.com/s/3120/m/7912/l/80205-writing-a-simple-networktables-program-in-c-and-java-with-a-java-client-pc-side)
 
-####Chief Delphi Thread:
+#### Chief Delphi Thread:
 [https://www.chiefdelphi.com/forums/showthread.php?t=145382](https://www.chiefdelphi.com/forums/showthread.php?t=145382)
 
-###Auto starting your OpenCV console app
+### Auto starting your OpenCV console app
 
 To auto start an application on boot of the Raspberry Pi, first make sure xterm is installed:
 ```
@@ -109,7 +109,7 @@ Add the following files at the bottom of the file and save:
 ```
 @xterm -hold --working-directory=/home/pi/<directory to use> -e ‘/home/pi/<bash script>
 ```
-###Streaming OpenCV output to webserver
+### Streaming OpenCV output to webserver
 
 You may want to stream OpenCV-processed output images from the RPi for viewing by the driver station.  This is possible by writing images out to MJPG files and running MJPG streamer.  By default the images will be available on https://<RPi_ip_addr>:8080
 
@@ -174,7 +174,7 @@ In a separate terminal window on the RPi, start mjpg-streamer:
 ```
 mjpg_streamer -i "input_file.so -f **_<directory of your app>_**" -o "output_http.so -w /usr/local/www"
 ```
-####References:
+#### References:
 
 [http://blog.miguelgrinberg.com/post/how-to-build-and-run-mjpg-streamer-on-the-raspberry-pi](http://blog.miguelgrinberg.com/post/how-to-build-and-run-mjpg-streamer-on-the-raspberry-pi)
 
@@ -182,7 +182,7 @@ mjpg_streamer -i "input_file.so -f **_<directory of your app>_**" -o "output_htt
 
 [http://docs.opencv.org/trunk/dd/d9e/classcv_1_1VideoWriter.html#gsc.tab=0](http://docs.opencv.org/trunk/dd/d9e/classcv_1_1VideoWriter.html#gsc.tab=0)
 
-###Access to the RPi during operation
+### Access to the RPi during operation
 
 In case the driver station needs to see what is happening on the RPi,  there are two methods:
 
@@ -214,7 +214,7 @@ Reference:
 
 [http://www.raspberrypiblog.com/2012/10/how-to-setup-remote-desktop-from.html](http://www.raspberrypiblog.com/2012/10/how-to-setup-remote-desktop-from.html)
 
-###Reducing exposure of the camera
+### Reducing exposure of the camera
 
 For high light environments like competition fields, it is often recommended to reduce the light entering the camera to prevent image washout and false positives on targets.  This can be done by physically adding a polarization filter to the camera lens.  It can also be done on the RPi by commanding the camera to reduce exposure on the input.  This can be done via the Video for Linux (v4l-utils) utilities package. 
 
@@ -246,7 +246,7 @@ Register the script to run during boot:
 ```
 sudo update-rc.d set_exposure.sh defaults
 ```
-####Reference:
+#### Reference:
 
 [https://www.chiefdelphi.com/forums/showthread.php?t=145829](https://www.chiefdelphi.com/forums/showthread.php?t=145829)
 
